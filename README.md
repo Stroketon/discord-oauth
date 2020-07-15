@@ -8,7 +8,7 @@ Example:
 const express = require('express');
 const app = express();
 app.use(express.json(), express.urlencoded({ extended: true }));
-const DiscordoAuth2 = require('./astral-oauth');
+const DiscordoAuth2 = require('discord-oauth');
 
 const oAuth = new DiscordoAuth2({
   client_secret: "your-client-secret",
@@ -17,7 +17,7 @@ const oAuth = new DiscordoAuth2({
 });
 
 app.get('/login', (req, res) => {
-  res.redirect('DISCORD-OAUTH-AUTHORIZATION');
+  res.redirect('DISCORD-OAUTH-AUTHORIZATION-LINK');
 });
 
 app.get('call-back-url', async(req, res) => {
